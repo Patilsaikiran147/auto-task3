@@ -1,0 +1,5 @@
+com\bppayout\cucumber\BP_PayoutRunner.class
+com\bppayout\cucumber\steps\PartnerListSteps.class
+com\bppayout\cucumber\steps\PartnerProfileSteps.class
+com\bppayout\cucumber\steps\AccessTokenSteps.class
+com\bppayout\services\BpPayoutServices.class

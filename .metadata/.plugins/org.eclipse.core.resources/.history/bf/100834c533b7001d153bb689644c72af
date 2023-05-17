@@ -1,0 +1,26 @@
+package Programs;
+
+import java.util.Scanner;
+
+public class Swap1 {
+	
+	static int a, b;
+
+	public static void hello() {	
+		a = a + b;
+		b = a - b;
+		a = a - b;
+		System.out.println("after swapping: a is " +a + " "+"b is "+ + b);
+	}
+
+	public static void main(String[] args) {
+		System.out.println("enter the values:");
+		Scanner sc = new Scanner(System.in);
+		a = sc.nextInt();
+		b = sc.nextInt();
+		
+		hello();
+
+	}
+
+}

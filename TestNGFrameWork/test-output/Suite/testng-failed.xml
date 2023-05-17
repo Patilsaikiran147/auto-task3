@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="browser" value="chrome"/>
+  <test name="ChromeTest(failed)">
+    <classes>
+      <class name="qaTest.TestScript">
+        <methods>
+          <include name="beforetest"/>
+          <include name="beforemethod"/>
+          <include name="beforemethod"/>
+          <include name="beforemethod"/>
+          <include name="samplemethodLogin"/>
+        </methods>
+      </class> <!-- qaTest.TestScript -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+  <test name="EdgeTest(failed)">
+    <parameter name="browser" value="edge"/>
+    <classes>
+      <class name="qaTest.TestScript">
+        <methods>
+          <include name="beforetest"/>
+          <include name="beforemethod"/>
+          <include name="beforemethod"/>
+          <include name="beforemethod"/>
+          <include name="samplemethodLogin"/>
+        </methods>
+      </class> <!-- qaTest.TestScript -->
+    </classes>
+  </test> <!-- EdgeTest(failed) -->
+  <test name="FirefoxTest(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="qaTest.TestScript">
+        <methods>
+          <include name="beforetest"/>
+          <include name="beforemethod"/>
+          <include name="beforemethod"/>
+          <include name="beforemethod"/>
+          <include name="samplemethodLogin"/>
+        </methods>
+      </class> <!-- qaTest.TestScript -->
+    </classes>
+  </test> <!-- FirefoxTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->

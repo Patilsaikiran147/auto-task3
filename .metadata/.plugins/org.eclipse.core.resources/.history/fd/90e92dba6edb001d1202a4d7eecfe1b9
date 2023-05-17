@@ -1,0 +1,38 @@
+package test;
+
+import org.testng.annotations.Test;
+import static org.testng.Assert.assertEquals;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import pages.HomePage;
+
+public class DemoTest extends BaseTest
+{
+
+    @Test
+    public void DemoExample() throws InterruptedException
+    {
+    
+    	// Application URL : https://magento.softwaretestingboard.com/
+    	    
+        HomePage homepage = new HomePage(driver);
+        homepage.navigateTo("Women","Tops","Tees");
+        
+        // 1. Select any product
+        homepage.productIs();
+       
+        // 2. Select the size, color and click Add to cart
+        homepage.productsize();
+        homepage.productcolor();
+        homepage.addTocarttt();
+        
+      
+		// 3. Verify the message "You added <ProdcutName> to your shopping cart.”
+        String str=homepage.verifymsg();  
+        System.out.println(str);
+        String str1="You added Desiree Fitness Tee to your shopping cart.";
+        Assert.assertEquals(str,str1);
+  }
+}

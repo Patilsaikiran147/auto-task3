@@ -1,0 +1,48 @@
+package drop;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+
+public class demo {
+	public static void main(String[] args) {
+		WebDriver driver=new ChromeDriver(); 
+		driver.get("https://www.globalsqa.com/demo-site/select-dropdown-menu/");
+		WebElement listBox = driver.findElement(By.xpath("//*[@id=\\\"post-2646\\\"]/div[2]/div/div/div/p/select")); 
+		Select select= new Select(listBox);
+		List<WebElement> allOptions = select.getOptions(); 
+		HashSet<String> allText=new HashSet<String>(); 
+		for(int i=0;i<allOptions.size();i++)
+		{
+		String text = allOptions.get(i).getText(); 
+		if(allText.add(text)==false) {
+		System.out.println(text); //print duplicate
+		} }
+		 
+	}
+
+	}
+
+
+//WebDriver driver=new ChromeDriver(); 
+//driver.get("https://www.globalsqa.com/demo-site/select-dropdown-menu/");
+//WebElement findElement = driver.findElement(By.//*[@id=\"post-2646\"]/div[2]/div/div/div/p/select"));
+//Select sel = new Select(findElement);
+// List<WebElement> list = sel.getOptions();
+// int size = list.size();
+// System.out.println(size);
+// for(int i=0;i<size-1;i++) {
+//	 sel.selectByIndex(i);
+//	 System.out.println(list.get(i).getText());
+// }

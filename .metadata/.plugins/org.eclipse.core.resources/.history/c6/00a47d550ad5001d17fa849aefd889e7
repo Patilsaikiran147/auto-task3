@@ -1,0 +1,36 @@
+package qaTest;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Dynamic_population {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			WebDriver driver = new ChromeDriver();
+			driver.get("https://www.worldometers.info/world-population/");
+			driver.manage().window().maximize();
+			int count=1;
+			while(count<=20) {
+				System.out.println(count+"second");
+				if(count==21) break;
+			List<WebElement> elements = driver.findElements(By.xpath("//div[@class=\"maincounter-number\"]/span[@class=\"rts-counter\"]"));
+			for(WebElement e:elements) {
+				System.out.println("current population:"+e.getText());
+			}
+				List<WebElement> list = driver.findElements(By.xpath("//div[text()='Today']/parent::div//span[@class=\"rts-counter\"]"));
+				for(WebElement e:list) {
+					System.out.println("today:"+e.getText());
+			}
+				List<WebElement> lists = driver.findElements(By.xpath("//div[text()='This year']/parent::div//span[@class=\"rts-counter\"]"));
+				for(WebElement e:lists) {
+					System.out.println("year:"+e.getText());
+			
+	}
+}
+}
+}

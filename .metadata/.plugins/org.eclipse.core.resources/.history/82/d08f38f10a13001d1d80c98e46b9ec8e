@@ -1,0 +1,24 @@
+package drop;
+
+import java.util.Scanner;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class demo {
+	public static void main(String[] args) {
+		WebDriver driver=new ChromeDriver(); 
+		driver.get("https://adactinhotelapp.com/HotelAppBuild2/");
+		WebElement tv=driver.findElement(By.id("username")); 
+		tv.sendKeys(Keys.CONTROL+"saikiran");
+		tv.sendKeys(Keys.DELETE);
+		}
+	}
+
+

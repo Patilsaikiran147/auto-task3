@@ -1,0 +1,11 @@
+package Programs;
+
+public class duplicate {
+
+	public static void main(String[] args) {
+		String str= "nagatulasideviguduri";
+		char ch[]=str.toCharArray();
+		System.out.println(ch);
+	}
+
+}

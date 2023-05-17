@@ -1,0 +1,15 @@
+package drop;
+
+import org.testng.annotations.Test;
+
+public class Testng {
+			@Test (priority = 2)
+			public void hyderabad(){
+					System.out.println("parallel");
+	}
+			@Test (priority=1)
+			public void mumbai() {
+				System.out.println("crossbrowser");
+			}
+
+}

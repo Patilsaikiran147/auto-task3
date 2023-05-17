@@ -1,0 +1,39 @@
+package drop;
+
+import java.util.Scanner;
+import java.util.Set;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class demo {
+	public static void main(String[] args) {
+	WebDriver driver=new ChromeDriver(); 
+	driver.get("http://www.naukri.com/");
+	Set<String> allWH=driver.getWindowHandles(); 
+	System.out.println("List Of Browsers:"); 
+	for(String wh:allWH) {
+	driver.switchTo().window(wh);
+	String title=driver.getTitle(); 
+	System.out.println(title);
+	}
+	System.out.println(); 
+	//Close specific browser
+	System.out.println("Enter Specific browser name:");
+	Scanner sc=new Scanner(System.in);
+	String browser=sc.next(); 
+	for(String wh:allWH) {
+	driver.switchTo().window(wh);
+	String title=driver.getTitle(); 
+	if(browser.equals(title))
+	{
+	driver.close();
+	}
+	else
+	{
+	driver.switchTo().window(wh);
+	} } }
+
+	}
+
+

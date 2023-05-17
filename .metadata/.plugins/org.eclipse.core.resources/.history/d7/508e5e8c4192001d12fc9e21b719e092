@@ -1,0 +1,25 @@
+package first;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ElementNotVisible {
+
+	public static void main(String[] args) throws InterruptedException, Exception {
+		// TODO Auto-generated method stub
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://omayo.blogspot.com/");
+		driver.manage().window().maximize();
+		Robot r = new Robot();
+		Thread.sleep(2000);
+		r.mouseWheel(10);
+		driver.findElement(By.xpath("//*[@id='hbutton']")).isDisplayed();
+		Thread.sleep(4000);
+		driver.quit();
+		}
+
+}

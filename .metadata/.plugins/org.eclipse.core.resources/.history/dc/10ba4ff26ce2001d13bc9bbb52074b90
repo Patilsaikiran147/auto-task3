@@ -1,0 +1,25 @@
+package qaTest;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class tooltip {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String baseUrl = "https://demo.guru99.com/test/social-icon.html";
+		WebDriver driver = new ChromeDriver();
+		driver.get(baseUrl);
+		String expectedTooltip = "Google+";
+		WebElement googly = driver.findElement(By.xpath("//*[@id=\"page\"]/div[2]/div/a[2]"));
+		      String actualtext = googly.getAttribute("title");
+		      System.out.println(actualtext);
+		      if(expectedTooltip.equals(actualtext)) {
+		    	  System.out.println("passed");
+		      }
+	}
+
+}
+//

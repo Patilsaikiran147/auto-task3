@@ -1,0 +1,19 @@
+package first;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ElementNotVisible {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://omayo.blogspot.com/");
+		driver.manage().window().maximize();
+		driver.findElement(By.xpath("//*[@id='hbutton']")).click();
+		Thread.sleep(4000);
+		driver.quit();
+		}
+
+}

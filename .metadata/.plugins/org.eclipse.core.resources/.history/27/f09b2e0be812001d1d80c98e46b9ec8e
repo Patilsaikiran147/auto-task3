@@ -1,0 +1,25 @@
+package drop;
+
+import java.util.Set;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class demo {
+
+	public static void main(String[] args) {
+		WebDriver driver=new ChromeDriver(); 
+		driver.get("http://www.naukri.com/");
+		Set<String> allWH=driver.getWindowHandles(); 
+		int count=allWH.size();
+		System.out.println(count);
+		for(String wh:allWH) {
+		driver.switchTo().window(wh);
+		String title=driver.getTitle(); 
+		System.out.println(title); 
+		driver.close();
+		} }
+
+	}
+
+

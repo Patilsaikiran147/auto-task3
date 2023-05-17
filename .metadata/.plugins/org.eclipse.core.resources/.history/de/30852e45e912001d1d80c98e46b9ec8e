@@ -1,0 +1,32 @@
+package drop;
+
+import java.util.Scanner;
+import java.util.Set;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class demo {
+	public static void main(String[] args) {
+	WebDriver driver=new ChromeDriver();  
+	driver.get("http://www.naukri.com/");
+	String mTitle=driver.getTitle(); 
+	Set<String> allWH=driver.getWindowHandles(); 
+	for(String wh:allWH)
+	{ 
+	driver.switchTo().window(wh);
+	String title=driver.getTitle(); 
+	if(mTitle.equals(title))
+	{ 
+	System.out.println("Main Browser is "+mTitle); 
+	} 
+	else 
+	{ 
+	System.out.println(title+" - child browser is closed"); 
+	driver.close();
+	} 
+	} }
+
+	}
+
+

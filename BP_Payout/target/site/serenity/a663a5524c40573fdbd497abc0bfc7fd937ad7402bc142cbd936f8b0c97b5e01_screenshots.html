@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+<!--[if IE 7]>
+<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">
+<![endif]--><!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Bootstrap -->
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script><link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-bdd-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">BP Payout api tests</span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <a
+                    href="ef417a9522e5455ecacc13da316bd8d1884604ca5cd37f831ba89586d56e0708.html">Test The Partener List And Agent List</a>
+                > <a
+                    href="a663a5524c40573fdbd497abc0bfc7fd937ad7402bc142cbd936f8b0c97b5e01.html">Check if the partner profile data can be fetched by user </a>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 29-06-2022 15:57</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Test The Partener List And Agent List </span>
+                                    <span class="badge tag-badge">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><i class='fa fa-check-square-o success-icon fa-3x' title='SUCCESS'></i></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Check If The Partner Profile Data Can Be Fetched By User
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+    <div class="story-title">
+        <h3>Scenario:</h3>
+        <div class="scenario">GET https://bp-payout-bk-dev.delhivery.com/bp_profile/&lt;PartnerID&gt;</div>
+    </div>
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="scaled_28ada4cd1112b6f338c8a68bb841ded5664efafafd77f606ac61c729bcf25b07.png" title="Given User login with &quot;alekhya.ampally@delhivery.com&quot; to get the OktaToken" width="960"/>
+                <img src="scaled_5e458236987e38ba44ffec972d1b5ca77cf57a56eae2d5e9af15088286b34f7b.png" title="When User sends a request with &quot;11640&quot; to get the partner profile" width="960"/>
+                <img src="5e458236987e38ba44ffec972d1b5ca77cf57a56eae2d5e9af15088286b34f7b.png" title="GET https://bp-payout-bk-dev.delhivery.com/bp_profile/11640" width="960"/>
+                <img src="5e458236987e38ba44ffec972d1b5ca77cf57a56eae2d5e9af15088286b34f7b.png" title="Then verify user get 200 status code with Success messagee" width="960"/>
+                <img src="scaled_6b87cc4f49994ec5ee89aa1c7818a87ead1e1582d5dbbb4b2e36beaa916070fd.png" title="And verify partner profile data" width="960"/>
+                <img src="28ada4cd1112b6f338c8a68bb841ded5664efafafd77f606ac61c729bcf25b07.png" title="Given User login with &quot;alekhya.ampally@delhivery.com&quot; to get the OktaToken" width="960"/>
+                <img src="6b87cc4f49994ec5ee89aa1c7818a87ead1e1582d5dbbb4b2e36beaa916070fd.png" title="When User sends a request with &quot;11911&quot; to get the partner profile" width="960"/>
+                <img src="5e458236987e38ba44ffec972d1b5ca77cf57a56eae2d5e9af15088286b34f7b.png" title="GET https://bp-payout-bk-dev.delhivery.com/bp_profile/11911" width="960"/>
+                <img src="6b87cc4f49994ec5ee89aa1c7818a87ead1e1582d5dbbb4b2e36beaa916070fd.png" title="GET https://bp-payout-bk-dev.delhivery.com/bp_profile/11911" width="960"/>
+                <img src="6b87cc4f49994ec5ee89aa1c7818a87ead1e1582d5dbbb4b2e36beaa916070fd.png" title="Then verify user get 200 status code with Success messagee" width="960"/>
+                <img src="6b87cc4f49994ec5ee89aa1c7818a87ead1e1582d5dbbb4b2e36beaa916070fd.png" title="And verify partner profile data: <span class='success-color'>SUCCESS</span>" width="960"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 1.4.1-rc.2</span>
+</div>
+</body>
+</html>

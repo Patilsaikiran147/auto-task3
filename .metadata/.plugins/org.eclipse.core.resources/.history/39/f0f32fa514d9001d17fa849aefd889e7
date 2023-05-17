@@ -1,0 +1,33 @@
+package qaTest;
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class loggers {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+				Logger logger = Logger.getLogger("Demo");
+				PropertyConfigurator.configure("Log4j");
+				
+					WebDriver	driver = new ChromeDriver();
+					driver.manage().window().maximize();
+					driver.get("https://adactinhotelapp.com/HotelAppBuild2/index.php");
+			
+			
+				
+					driver.findElement(By.name("username")).sendKeys("Thippesh");
+					driver.findElement(By.id("password")).sendKeys("Thippesh");
+					driver.findElement(By.className("login_button")).click();
+
+		
+			
+					driver.findElement(By.partialLinkText("Logout")).click();
+					driver.close();
+		
+	}
+
+}

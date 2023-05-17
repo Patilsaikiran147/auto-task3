@@ -1,0 +1,104 @@
+package first;
+
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.BeforeClass;
+
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Reporter;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import com.aventstack.extentreports.Status;
+public class Dataproviderr {
+
+	public static WebDriver dr;
+	public String data[][];
+
+	ExtentReports er;
+	ExtentTest test;
+	
+	@BeforeSuite
+	public void extent() {
+		ExtentReports er = new ExtentReports();
+		File f = new File("Report.html");
+		ExtentSparkReporter sr = new ExtentSparkReporter("Report.html");
+		er.attachReporter(sr);
+		test = er.createTest("Logintest");
+		
+	}
+	
+	@Test(dataProvider = "excelsheet")
+	public void login(String UN, String PWD) {
+	test.log(Status.INFO,"please enter credentials");
+		dr.findElement(By.name("username")).sendKeys(UN);
+		dr.findElement(By.name("password")).sendKeys(PWD);
+		dr.findElement(By.name("login")).click();
+		dr.findElement(By.linkText("Logout")).click();
+		test.log(Status.PASS, "lOGIN PASS SUCESSFULLY");
+		dr.findElement(By.linkText("Click here to login again")).click();
+	}
+
+	@BeforeTest
+	public void beforeSuite() {
+		dr = new ChromeDriver();
+		dr.manage().window().maximize();
+		
+	}
+
+	@BeforeClass
+	public void beforeMethod() {
+		dr.get("https://adactinhotelapp.com/HotelAppBuild2/");
+		dr.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+
+	@DataProvider(name = "excelsheet")
+	public String[][] sheetdata() throws Exception {
+		File src = new File("C:\\Users\\sp21440\\Desktop\\pass_fail.xlsx");
+		FileInputStream fis = new FileInputStream(src);
+		XSSFWorkbook wb = new XSSFWorkbook(fis);
+		XSSFSheet sheet1 = wb.getSheetAt(2);
+		int rc = sheet1.getLastRowNum();
+		System.out.println(rc);
+		data = new String[rc + 1][2];
+		for (int i = 0; i <= rc; i++) {
+			data[i][0] = sheet1.getRow(i).getCell(0).toString();
+			data[i][1] = sheet1.getRow(i).getCell(1).toString();
+		}
+		Reporter.log("it is executed");
+		return data;
+		
+			
+	}
+
+	@AfterClass
+	public void afterclass() {
+		dr.close();
+	}
+	
+	@AfterSuite
+	public void desktop() throws IOException {
+		er.flush();
+		Desktop.getDesktop().browse(new File("Report.html").toURI());
+	}
+	
+}

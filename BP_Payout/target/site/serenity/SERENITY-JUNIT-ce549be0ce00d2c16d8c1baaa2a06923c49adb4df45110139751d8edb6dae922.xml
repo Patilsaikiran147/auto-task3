@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="3" name="Test the Partner list and agent List" skipped="0" tests="3" time="39.44" timestamp="2023-04-94 08:21:32"><testcase name="Check if the partners list can be fetched by user"><failure type="java.lang.AssertionError"/><system-err>null&#13;
+com.bppayout.cucumber.steps.PartnerListSteps.verify_user_get_status_code_with_Success_message(PartnerListSteps.java:34)&#13;
+✽.Then verify user get 200 status code with Success message(partner.feature:7)&#13;
+</system-err></testcase><testcase name="Check if the partner profile data can be fetched by user"><failure type="java.lang.AssertionError"/><system-err>null&#13;
+com.bppayout.cucumber.steps.PartnerProfileSteps.verify_user_get_status_code_with_Success_message(PartnerProfileSteps.java:37)&#13;
+✽.Then verify user get 200 status code with Success messagee(partner.feature:14)&#13;
+</system-err></testcase></testsuite>

@@ -1,0 +1,35 @@
+package drop;
+
+import java.util.Scanner;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class demo {
+	public static void main(String[] args) {
+	WebDriver driver=new ChromeDriver();  
+	driver.manage().window().maximize();
+	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	driver.get("http://www.naukri.com/");
+	Point p = new Point(200,200);
+	driver.manage().window().setPosition(p);
+//	driver.findElement(By.id("login_Layer")).click();
+//	driver.findElement(By.id("eLogin")).sendKeys("2210414147@gitam.in");
+//	driver.findElement(By.id("pLogin")).sendKeys("123456789");
+//	driver.findElement(By.xpath("//button[text()='Login']")).submit();
+//	driver.findElement(By.xpath("//a[text()='View Profile']")).click();
+//	driver.findElement(By.id("uploadLink")).click();
+//	driver.findElement(By.id("attachCV")).sendKeys("D:\\Resume.docx");
+	By b = By.id("login_Layer");
+WebElement e=driver.findElement(b);
+e.click();
+
+	}
+	}
+
+

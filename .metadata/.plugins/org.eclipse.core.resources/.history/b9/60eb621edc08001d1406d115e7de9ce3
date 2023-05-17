@@ -1,0 +1,68 @@
+package drop;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Down {
+
+	public static void main(String[] args) throws Throwable {
+		// TODO Auto-generated method stub
+		WebDriver d = new ChromeDriver();
+		//Thread.sleep(2000);
+		d.get("https://chercher.tech/practice/practice-dropdowns-selenium-webdriver");
+		d.manage().window().maximize();
+		d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		d.findElement(By.className("col-lg-3")).click();
+		List<WebElement> findElements = d.findElements(By.xpath("/html/body/div/div/div/div/div[1]/div[2]/p[1]/select[1]"));
+		System.out.println("The Options in the Dropdown are: " + findElements.size());
+		
+		// Condition to get the WebElement for list and Click over "Angular" option
+		for(int i=0; i<findElements.size(); i++)
+		{
+			// Printing All the options from the dropdown
+			System.out.println(findElements.get(i).getText());
+			
+			// Checking the condition whether option in text "Angular" is comming
+			if(findElements.get(i).getText().contains("Iphone")) 
+			{
+				// Clicking if text "Angular" is there
+				findElements.get(i).click();
+				
+				// Breaking the condition if the condition get satisfied
+				break;
+			}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		for (WebElement option : findElements) {
+//			if (option.getText().equals("Yahoo")) {
+//			option.click();
+//			
+//			break;
+//		
+//			}
+//			System.out.println("done");
+			}
+
+	}
+}
+
+

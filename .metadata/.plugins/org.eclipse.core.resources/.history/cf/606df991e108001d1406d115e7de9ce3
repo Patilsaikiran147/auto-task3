@@ -1,0 +1,65 @@
+package drop;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Down {
+
+	public static void main(String[] args) throws Throwable {
+		// TODO Auto-generated method stub
+		WebDriver d = new ChromeDriver();
+		//Thread.sleep(2000);
+		d.get("https://www.jquery-az.com/boots/demo.php?ex=63.0_2");
+		d.manage().window().maximize();
+		d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		d.findElement(By.xpath("//button[contains(@class,'multiselect')]")).click();
+		d.findElement(By.xpath("/html/body/div[3]/table/tbody/tr[2]/td[3]/div/span/div/ul/li[4]/a/label/input")).click(); 
+		
+//		List<WebElement> findElements = d.findElements(By.xpath("//ul[contains(@class,'multiselect-container dropdown-menu')]//li//a//label"));
+//		System.out.println("The Options in the Dropdown are: " + findElements.size());
+//		
+//		for(int i=0; i<findElements.size(); i++)
+//		{
+//			
+//			System.out.println(findElements.get(i).getText());
+//			
+//			if(findElements.get(i).getText().equals("CSS")) 
+//			
+//				findElements.get(i).click();
+//	
+//			}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		for (WebElement option : findElements) {
+//			if (option.getText().equals("Yahoo")) {
+//			option.click();
+//			
+//			break;
+//		
+//			}
+//			System.out.println("done");
+			}
+
+	}
+
+
+
